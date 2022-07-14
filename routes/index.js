@@ -2,21 +2,16 @@ const express = require('express');
 const router = express.Router();
 
 // Mock Data
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date()
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date()
-  }
-];
+const messages = require('../mock.data')
 
-// GET home page
+
+// Get Home page
 router.get('/', (req, res) => {
+  res.render('home', {title: 'Home'});
+})
+
+// GET index page
+router.get('/index', (req, res) => {
   res.render('index', { title: 'Mini Message-board', messages: messages });
 });
 
@@ -30,7 +25,7 @@ router.post('/new', (req, res, next) => {
   const user = req.body.user;
   const message = req.body.message;
   messages.push({text: message, user: user, added: new Date()});
-  res.redirect('/');
+  res.redirect('/index');
 })
 
 module.exports = router;

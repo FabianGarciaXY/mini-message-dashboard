@@ -4,6 +4,16 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    h1 Mini Message Board with Express and Pug
+    nav#nav
+      ul.nav#navbar
+        li.active
+          a(href='/') Home
+        li
+          a(href='/index') Messages
+        li
+          a(href='/new') New Message
 
-    block content
+    h2 Mini Message Board with Express and Pug
+
+    div#content
+      block content

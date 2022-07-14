@@ -1,20 +1,17 @@
 extends layout
 
 block content
-
-    h2= title
-
-    form(action="/new", method="post")
+    form(action="/new", method="post")#form
         label User
         br
-        input(type="text", name="user", placeholder="Your name") 
+        input(type="text", name="user", placeholder="Your name", required=true) 
         
         br 
         br
 
         label Message  
         br
-        input(type="text", name="message", placeholder="2022-01-01")
+        textarea(cols="38", rows="7", type="text", name="message", placeholder="Some message", required=true)
         
         br
         br 

@@ -1,19 +1,16 @@
 extends layout
 
-block content
-  h2= title
-  p Welcome to #{title}
-
-  p Messages
-
-  ul
-    each item in messages
-      h4= item.user
-      p: i #{item.text}
-      p: i #{item.added}
-
+block content  
+  form(type="submit" action="/new" method="get")
+    button Add a message!
   
   br
+  
+  ul#items
+    each item in messages
+      li
+        h4= item.user
+        p: i #{item.text}
+        p: i #{item.added}
+
   br
-  form(type="submit" action="/new" method="get")
-    button Add a message

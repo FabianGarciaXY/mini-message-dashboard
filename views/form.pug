@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+    h2= title
+
+    form(action="/new", method="post")
+        label User
+        br
+        input(type="text", name="user", placeholder="Your name") 
+        
+        br 
+        br
+
+        label Message  
+        br
+        input(type="text", name="message", placeholder="2022-01-01")
+        
+        br
+        br 
+        button Submit!
